@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import Nav from 'react-bootstrap/Nav'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Tab from 'react-bootstrap/Tab'
 
 class Login extends Component {
   constructor() {
@@ -11,7 +15,8 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      errors: {},
+      userType: "Customer"
     };
   }
 
@@ -43,7 +48,8 @@ class Login extends Component {
 
     const userData = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      userType: this.state.userType
     };
 
     this.props.loginUser(userData);
@@ -68,6 +74,31 @@ class Login extends Component {
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
+            <Tab.Container id="userType" defaultActiveKey="first">
+              <Row>
+                <Col sm={true}>
+                  <Nav variant="pills" className="flex-row center">
+                    <Nav.Item className="w-100">
+                      <Nav.Link onClick={(e) => {this.setState({"userType": "Customer"})}} eventKey="first">Customer</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Col>
+                <Col sm={true}>
+                  <Nav variant="pills" className="flex-row center">
+                    <Nav.Item className="w-100">
+                      <Nav.Link onClick={() => {this.setState({"userType": "Trainer"})}} eventKey="second">Trainer</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Col>
+                <Col sm={true}>
+                  <Nav variant="pills" className="flex-row center">
+                    <Nav.Item className="w-100">
+                      <Nav.Link onClick={() => {this.setState({"userType": "Admin"})}}  eventKey="third">Admin</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Col>
+              </Row>
+            </Tab.Container>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="input-field col s12">
                 <input

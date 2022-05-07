@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Logo from './partials/Logo'
 
 class Navbar extends Component {
   render() {
@@ -14,8 +15,8 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              <i className="material-icons">code</i>
-              Trainer's room
+              <Logo style={{display: 'inline-block'}}/> 
+              <span style={{display: 'inline-block', marginLeft: '10px'}}>Trainer's room</span>
             </Link>
           </div>
         </nav>

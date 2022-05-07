@@ -18,9 +18,8 @@ class Dashboard extends Component {
           <div className="landing-copy col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
+              <p className="flow-text grey-text text-darken-1" style={{font: 'Century Gothic'}}>
+                You are logged in as an a(n) {user.userType}
               </p>
             </h4>
             <button
