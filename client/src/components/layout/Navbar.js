@@ -5,9 +5,9 @@ import Logo from './partials/Logo'
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
+      <div className="navbar-fixed " >
+        <nav className="z-depth-2 " style={{height: '80px'}}>
+          <div className="nav-wrapper white" style={{backgroundColor: '#2979ff'}}>
             <Link
               to="/"
               style={{
@@ -16,7 +16,7 @@ class Navbar extends Component {
               className="col s5 brand-logo center black-text"
             >
               <Logo style={{display: 'inline-block'}}/> 
-              <span style={{display: 'inline-block', marginLeft: '10px'}}>Trainer's room</span>
+              <span style={{display: 'inline-block', marginLeft: '10px'}}>TRAINER ROOM </span>
             </Link>
           </div>
         </nav>
